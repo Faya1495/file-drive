@@ -9,7 +9,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { formatRelative } from "date-fns";
 
 import { Doc } from "../../../../convex/_generated/dataModel";
-import { FileTextIcon, GanttChartIcon, ImageIcon } from "lucide-react";
+import { CompassIcon, FileTextIcon, GanttChartIcon, ImageIcon, VideoIcon } from "lucide-react";
 import { ReactNode } from "react";
 import { useQuery } from "convex/react";
 import { api } from "../../../../convex/_generated/api";
@@ -29,6 +29,8 @@ export function FileCard({
     image: <ImageIcon />,
     pdf: <FileTextIcon />,
     csv: <GanttChartIcon />,
+    zip: <CompassIcon />,
+    video: <VideoIcon />
   } as Record<Doc<"files">["type"], ReactNode>;
 
   return (
@@ -54,6 +56,9 @@ export function FileCard({
 
         {file.type === "csv" && <GanttChartIcon className="w-20 h-20" />}
         {file.type === "pdf" && <FileTextIcon className="w-20 h-20" />}
+        {file.type === "image" && <ImageIcon className="w-20 h-20" />}
+        {file.type === "zip" && <CompassIcon className="w-20 h-20" />}
+        {file.type === "video" && <VideoIcon className="w-20 h-20" />}
       </CardContent>
       <CardFooter className="flex justify-between">
         <div className="flex gap-2 text-xs text-gray-700 w-40 items-center">
