@@ -57,8 +57,6 @@ export function FileCard({
         {file.type === "csv" && <GanttChartIcon className="w-20 h-20" />}
         {file.type === "pdf" && <FileTextIcon className="w-20 h-20" />}
         {file.type === "image" && <ImageIcon className="w-20 h-20" />}
-        {file.type === "zip" && <CompassIcon className="w-20 h-20" />}
-        {file.type === "video" && <VideoIcon className="w-20 h-20" />}
       </CardContent>
       <CardFooter className="flex justify-between">
         <div className="flex gap-2 text-xs text-gray-700 w-40 items-center">
